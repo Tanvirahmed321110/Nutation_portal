@@ -1,0 +1,108 @@
+.points-summary {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    justify-content: space-between;
+    width: 100%;
+    background-color: #ECECF6;
+    background-color: var(--my-primary-hover);
+    padding: 24px;
+    border-radius: 16px;
+    margin-top: 8px;
+    background: linear-gradient(20deg,
+            #b5dc36d6 40%,
+            #dbff66d6 40%,
+            #b5dc36 20%);
+}
+
+.points-amount {
+    margin-top: 8px;
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.points-value {
+    background-color: #fff;
+    padding: 16px;
+    border-radius: 12px;
+}
+
+
+.point-history-redeem {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    margin-top: 32px;
+    gap: 24px;
+}
+
+.point-history-redeem .card {
+    box-shadow: 0 2px 16px #00000017;
+    padding: 24px;
+    border-radius: 12px;
+    /* border: 1px solid var(--my-border-1); */
+}
+
+.point-history-redeem .history-item {
+    border-bottom: 1px solid var(--my-border-1);
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 0;
+}
+
+.point-history-redeem .date {
+    margin-top: 8px;
+    opacity: .7;
+    font-size: 14px;
+}
+
+.points-change {
+    font-size: 18px;
+    font-weight: 600;
+    opacity: 1;
+}
+
+.points-change.positive {
+    opacity: .6;
+}
+
+.card-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.redeem-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+
+.redeem-grid .redeem-option {
+    /* background-color: var(--my-primary-hover); */
+    padding: 16px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: .2s ease;
+    box-shadow: 0 2px 16px #00000017;
+}
+
+.redeem-grid .redeem-option .discount-amount {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.redeem-grid .points-cost {
+    padding-top: 4px;
+    opacity: .8;
+    font-size: 14px;
+}
+
+.redeem-grid .redeem-option .redeem-btn {
+    margin-top: 4px;
+    /* background-color: white; */
+}

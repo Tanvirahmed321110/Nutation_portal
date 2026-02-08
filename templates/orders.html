@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My Orders</title>
+        <link rel="stylesheet" href="/static/src/css/main.css">
+    </head>
+
+    <body>
+        <header class="c">
+            <div class="container">
+                <h2 style="color:#A8D613">Nutrition Portal</h2>
+            </div>
+        </header>
+        <main>
+
+
+            <section>
+
+                <div class="container">
+                    <!--=======================||  Portal Header Here  ||=======================-->
+                    <div class="portal-header">
+                        <div class="left">
+                            <div class="image-wrap">
+                                <!-- User Image  -->
+                                <img src="/static/src/images/avatar.jpg" alt="profile image" loading="lazy">
+                            </div>
+
+                            <div class="">
+                                <div class="greeting">Hello,</div>
+                                <!-- User Name Here vai -->
+                                <div class="name">Tanvir Ahmed</div>
+                            </div>
+                        </div>
+
+                        <!-- Right -->
+                        <div class="right">
+                            <div class="my-points">My Points</div>
+                            <!-- Total Points Here Boss -->
+                            <div class="points">1600</div>
+                        </div>
+                    </div>
+
+
+
+                    <!--============================|| Portal Menus Sub Header Here ||=============================-->
+                    <div class="portal-sub-header-wrap">
+                        <ul class="portal-sub-header">
+                            <li>
+                                <a href="#" class="item "><svg width="20" height="20" viewBox="0 0 24 24"
+                                        fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="3" y="3" width="8" height="8" />
+                                        <rect x="13" y="3" width="8" height="8" />
+                                        <rect x="3" y="13" width="8" height="8" />
+                                        <rect x="13" y="13" width="8" height="8" />
+                                    </svg>
+                                    Overview</a>
+                            </li>
+                            <li>
+                                <a href="#" class="item active"><svg width="20" height="20" viewBox="0 0 24 24"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M6 6H20L18 14H8L6 6Z" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                        <circle cx="9" cy="20" r="1.5" stroke="currentColor" stroke-width="2" />
+                                        <circle cx="17" cy="20" r="1.5" stroke="currentColor" stroke-width="2" />
+                                    </svg>My Orders</a>
+                            </li>
+                            <li>
+                                <a href="#" class="item"> <!-- Profile Icon -->
+                                    <!-- Star / Points Icon -->
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 2l3 7h7l-5.5 4.5 2 7-6-4-6 4 2-7L2 9h7l3-7z" stroke="currentColor"
+                                            stroke-width="2" />
+                                    </svg>My Points</a>
+                            </li>
+                            <li>
+                                <a href="#" class="item"><!-- Profile Icon -->
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2" />
+                                        <path d="M4 20c0-4 8-4 8-4s8 0 8 4" stroke="currentColor" stroke-width="2" />
+                                    </svg> Profile</a>
+                            </li>
+                            <li>
+                                <a href="#" class="item"> <!-- Address / Location Icon -->
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 2C8 2 5 5 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-4-3-7-7-7z"
+                                            stroke="currentColor" stroke-width="2" />
+                                        <circle cx="12" cy="9" r="2" stroke="currentColor" stroke-width="2" />
+                                    </svg>Address</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </section>
+
+
+
+
+            <!--============================|| Page Content Here ||============================-->
+            <div class="page-content">
+                <div class="container">
+
+
+                    <!--================== When Items Found ===================-->
+                    <div>
+                        <div class="">
+                            <h1 class="page-title">My Orders</h1>
+                            <p class="page-sub-title">Here you can view all your past orders and their details.</p>
+                        </div>
+
+
+                        <div class="table my-mt-16">
+                            <div>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Order Id</th>
+                                            <th>Date</th>
+                                            <th>Price</th>
+                                            <th>Earn Points</th>
+                                            <th>Status</th>
+                                            <th>Invoice</th>
+                                            <th>View Details</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <!-- single item  -->
+                                        <tr>
+                                            <td>#12345</td>
+                                            <td>2024-06-15</td>
+                                            <td>
+                                                <div>$<span>2000</span></div>
+                                            </td>
+                                            <td>500</td>
+                                            <td><span class="status delivered">Delivered</span></td>
+
+                                            <!-- view invoice button -->
+                                            <td>
+                                                <button class="my-btn view-invoice-btn" title="view invoice">
+                                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <!-- Eye outline -->
+                                                        <path d="M1 12C1 12 5 4 12 4s11 8 11 8-4 8-11 8S1 12 1 12Z"
+                                                            stroke="currentColor" stroke-width="2"
+                                                            stroke-linecap="round" stroke-linejoin="round" />
+                                                        <!-- Pupil -->
+                                                        <circle cx="12" cy="12" r="3" stroke="currentColor"
+                                                            stroke-width="2" />
+                                                    </svg>
+                                                </button>
+                                            </td>
+
+                                            <!-- view details button -->
+                                            <td><button class="my-btn my-primary-btn"> Details</button></td>
+                                        </tr>
+                                        <!-- single item  -->
+                                        <tr>
+                                            <td>#12345</td>
+                                            <td>2024-06-15</td>
+                                            <td>
+                                                <div>$<span>2000</span></div>
+                                            </td>
+                                            <td>122</td>
+                                            <td><span class="status canceled">Canceled</span></td>
+
+                                            <!-- view invoice button -->
+                                            <td>
+                                                <button class="my-btn view-invoice-btn" title="view invoice">
+                                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <!-- Eye outline -->
+                                                        <path d="M1 12C1 12 5 4 12 4s11 8 11 8-4 8-11 8S1 12 1 12Z"
+                                                            stroke="currentColor" stroke-width="2"
+                                                            stroke-linecap="round" stroke-linejoin="round" />
+                                                        <!-- Pupil -->
+                                                        <circle cx="12" cy="12" r="3" stroke="currentColor"
+                                                            stroke-width="2" />
+                                                    </svg>
+                                                </button>
+                                            </td>
+
+                                            <!-- view details button -->
+                                            <td><button class="my-btn my-primary-btn"> Details</button></td>
+                                        </tr>
+                                        <!-- single item  -->
+                                        <tr>
+                                            <td>#12345</td>
+                                            <td>2024-06-15</td>
+                                            <td>
+                                                <div>$<span>2000</span></div>
+                                            </td>
+                                            <td>320</td>
+                                            <td><span class="status pending">Pending</span></td>
+
+                                            <!-- view invoice button -->
+                                            <td>
+                                                <button class="my-btn view-invoice-btn" title="view invoice">
+                                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <!-- Eye outline -->
+                                                        <path d="M1 12C1 12 5 4 12 4s11 8 11 8-4 8-11 8S1 12 1 12Z"
+                                                            stroke="currentColor" stroke-width="2"
+                                                            stroke-linecap="round" stroke-linejoin="round" />
+                                                        <!-- Pupil -->
+                                                        <circle cx="12" cy="12" r="3" stroke="currentColor"
+                                                            stroke-width="2" />
+                                                    </svg>
+                                                </button>
+                                            </td>
+
+                                            <!-- view details button -->
+                                            <td><button class="my-btn my-primary-btn"> Details</button></td>
+                                        </tr>
+                                        <!-- single item  -->
+                                        <tr>
+                                            <td>#12345</td>
+                                            <td>2024-06-15</td>
+                                            <td>
+                                                <div>$<span>2000</span></div>
+                                            </td>
+                                            <td>300</td>
+                                            <td><span class="status delivered">Delivered</span></td>
+
+                                            <!-- view invoice button -->
+                                            <td>
+                                                <button class="my-btn view-invoice-btn" title="view invoice">
+                                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <!-- Eye outline -->
+                                                        <path d="M1 12C1 12 5 4 12 4s11 8 11 8-4 8-11 8S1 12 1 12Z"
+                                                            stroke="currentColor" stroke-width="2"
+                                                            stroke-linecap="round" stroke-linejoin="round" />
+                                                        <!-- Pupil -->
+                                                        <circle cx="12" cy="12" r="3" stroke="currentColor"
+                                                            stroke-width="2" />
+                                                    </svg>
+                                                </button>
+                                            </td>
+
+                                            <!-- view details button -->
+                                            <td><button class="my-btn my-primary-btn"> Details</button></td>
+                                        </tr>
+                                        <!-- single item  -->
+                                        <tr>
+                                            <td>#12345</td>
+                                            <td>2024-06-15</td>
+                                            <td>
+                                                <div>$<span>2000</span></div>
+                                            </td>
+                                            <td>500</td>
+                                            <td><span class="status canceled">Canceled</span></td>
+
+                                            <!-- view invoice button -->
+                                            <td>
+                                                <button class="my-btn view-invoice-btn" title="view invoice">
+                                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <!-- Eye outline -->
+                                                        <path d="M1 12C1 12 5 4 12 4s11 8 11 8-4 8-11 8S1 12 1 12Z"
+                                                            stroke="currentColor" stroke-width="2"
+                                                            stroke-linecap="round" stroke-linejoin="round" />
+                                                        <!-- Pupil -->
+                                                        <circle cx="12" cy="12" r="3" stroke="currentColor"
+                                                            stroke-width="2" />
+                                                    </svg>
+                                                </button>
+                                            </td>
+
+                                            <!-- view details button -->
+                                            <td><button class="my-btn my-primary-btn"> Details</button></td>
+                                        </tr>
+                                        <!-- single item  -->
+                                        <tr>
+                                            <td>#12345</td>
+                                            <td>2024-06-15</td>
+                                            <td>
+                                                <div>$<span>2000</span></div>
+                                            </td>
+                                            <td>250</td>
+                                            <td><span class="status pending">Pending</span></td>
+
+                                            <!-- view invoice button -->
+                                            <td>
+                                                <button class="my-btn view-invoice-btn" title="view invoice">
+                                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <!-- Eye outline -->
+                                                        <path d="M1 12C1 12 5 4 12 4s11 8 11 8-4 8-11 8S1 12 1 12Z"
+                                                            stroke="currentColor" stroke-width="2"
+                                                            stroke-linecap="round" stroke-linejoin="round" />
+                                                        <!-- Pupil -->
+                                                        <circle cx="12" cy="12" r="3" stroke="currentColor"
+                                                            stroke-width="2" />
+                                                    </svg>
+                                                </button>
+                                            </td>
+
+                                            <!-- view details button -->
+                                            <td><button class="my-btn my-primary-btn"> Details</button></td>
+                                        </tr>
+                                        <!-- single item  -->
+                                        <tr>
+                                            <td>#12345</td>
+                                            <td>2024-06-15</td>
+                                            <td>
+                                                <div>$<span>2000</span></div>
+                                            </td>
+                                            <td>500</td>
+                                            <td><span class="status delivered">Delivered</span></td>
+
+                                            <!-- view invoice button -->
+                                            <td>
+                                                <button class="my-btn view-invoice-btn" title="view invoice">
+                                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <!-- Eye outline -->
+                                                        <path d="M1 12C1 12 5 4 12 4s11 8 11 8-4 8-11 8S1 12 1 12Z"
+                                                            stroke="currentColor" stroke-width="2"
+                                                            stroke-linecap="round" stroke-linejoin="round" />
+                                                        <!-- Pupil -->
+                                                        <circle cx="12" cy="12" r="3" stroke="currentColor"
+                                                            stroke-width="2" />
+                                                    </svg>
+                                                </button>
+                                            </td>
+
+                                            <!-- view details button -->
+                                            <td><button class="my-btn my-primary-btn"> Details</button></td>
+                                        </tr>
+                                        <!-- single item  -->
+                                        <tr>
+                                            <td>#12345</td>
+                                            <td>2024-06-15</td>
+                                            <td>
+                                                <div>$<span>2000</span></div>
+                                            </td>
+                                            <td>500</td>
+                                            <td><span class="status canceled">Canceled</span></td>
+
+                                            <!-- view invoice button -->
+                                            <td>
+                                                <button class="my-btn view-invoice-btn" title="view invoice">
+                                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <!-- Eye outline -->
+                                                        <path d="M1 12C1 12 5 4 12 4s11 8 11 8-4 8-11 8S1 12 1 12Z"
+                                                            stroke="currentColor" stroke-width="2"
+                                                            stroke-linecap="round" stroke-linejoin="round" />
+                                                        <!-- Pupil -->
+                                                        <circle cx="12" cy="12" r="3" stroke="currentColor"
+                                                            stroke-width="2" />
+                                                    </svg>
+                                                </button>
+                                            </td>
+
+                                            <!-- view details button -->
+                                            <td><button class="my-btn my-primary-btn"> Details</button></td>
+                                        </tr>
+                                        <!-- single item  -->
+                                        <tr>
+                                            <td>#12345</td>
+                                            <td>2024-06-15</td>
+                                            <td>
+                                                <div>$<span>2000</span></div>
+                                            </td>
+                                            <td>00</td>
+                                            <td><span class="status pending">Pending</span></td>
+
+                                            <!-- view invoice button -->
+                                            <td>
+                                                <button class="my-btn view-invoice-btn" title="view invoice">
+                                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <!-- Eye outline -->
+                                                        <path d="M1 12C1 12 5 4 12 4s11 8 11 8-4 8-11 8S1 12 1 12Z"
+                                                            stroke="currentColor" stroke-width="2"
+                                                            stroke-linecap="round" stroke-linejoin="round" />
+                                                        <!-- Pupil -->
+                                                        <circle cx="12" cy="12" r="3" stroke="currentColor"
+                                                            stroke-width="2" />
+                                                    </svg>
+                                                </button>
+                                            </td>
+
+                                            <!-- view details button -->
+                                            <td><button class="my-btn my-primary-btn"> Details</button></td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+
+
+
+                                <!--=======================||  pagination Here  ||======================-->
+                                <div class="my-pagination-wrap">
+                                    <div class="my-pagination">
+
+                                        <!-- disabled -->
+                                        <!-- <button class="prev next-prev disabled" disabled>
+                                                    <i class="fa-solid fa-angle-left"></i>
+                                                </button> -->
+                                        <button class="prev next-prev disabled" disabled>
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+
+                                        </button>
+
+                                        <ul class="wrap  my-gap-1">
+                                            <li><a class="page " href="#">1</a></li>
+                                            <li><a class="page active" href="#">2</a></li>
+                                            <li><a class="page jump" href="#">...</a></li>
+                                            <li><a class="page" href="#">8</a></li>
+                                            <li><a class="page" href="#">9</a></li>
+                                        </ul>
+
+                                        <button class="next next-prev">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+
+                                        </button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                    <!--================== When Item Empty ===================-->
+                    <div class="empty">
+                        <h3 class="page-title">No Orders Found</h3>
+                        <img class="my-mt-12" src="/static/src/images/not-found.png" alt="Not Found image"
+                            loading="lazy">
+                    </div>
+
+                </div>
+            </div>
+        </main>
+
+
+
+        <footer></footer>
+    </body>
+
+</html>
