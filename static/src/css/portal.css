@@ -106,3 +106,149 @@
     margin-top: 4px;
     /* background-color: white; */
 }
+
+
+
+
+
+
+
+
+
+.order-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 16px;
+}
+
+
+.orders-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+}
+
+.sort-by {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    flex-shrink: 0;
+}
+
+.sort-by select {
+    padding: 6px 12px;
+    border-radius: 8px;
+    border: 1px solid var(--my-border-1);
+    background-color: #fff;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.sort-by select option {
+    cursor: pointer !important;
+}
+
+.sort-by select:hover {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.sort-by select:focus {
+    outline: none;
+    border-color: var(--my-primary-hover);
+}
+
+
+
+
+
+
+
+
+.details-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.details-cards .card {
+    box-shadow: 0 2px 16px #00000017;
+    box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
+    padding: 24px;
+    border-radius: 12px;
+    background-color: white;
+    /* border: 1px solid var(--my-border-1); */
+}
+
+.details-cards .card .item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--my-border-1);
+    gap: 16px;
+}
+
+.details-cards .card .item .key {
+    flex-shrink: 0;
+    font-weight: 500;
+}
+
+.details-cards .card .item .key,
+.details-cards .card .item .value {
+    opacity: .8;
+}
+
+.details-cards .card .item.total .key,
+.details-cards .card .item.total .value {
+    font-weight: 600;
+    font-size: 18px;
+    opacity: 1;
+}
+
+.details-cards .card .item.point {
+    border-bottom: none;
+    margin-top: 24px;
+    background-color: #b5dc3627;
+    border-radius: 12px;
+    padding: 12px;
+}
+
+.details-cards .order-placed {
+    /* opacity: .8; */
+}
+
+.details-cards .order-placed .name {
+    font-weight: 600;
+    color: 000;
+    font-size: 18px;
+}
+
+
+.details-cards .card .item.point .key,
+.details-cards .card .item.point .value {
+    opacity: 1;
+    font-weight: 500;
+}
+
+
+.card.order,
+.card.payment-info {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    justify-content: space-between;
+}
+
+
+.card.payment-info .items {
+    display: flex;
+    flex-direction: column;
+    /* gap: 12px; */
+}
+
+.card.payment-info .items .key {
+    font-weight: 600;
+}

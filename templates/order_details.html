@@ -57,8 +57,7 @@
                                         <rect x="3" y="13" width="8" height="8" />
                                         <rect x="13" y="13" width="8" height="8" />
                                     </svg>
-                                    <span class="no-wrap">Overview</span>
-                                </a>
+                                    Overview</a>
                             </li>
                             <li>
                                 <a href="#" class="item active"><svg width="20" height="20" viewBox="0 0 24 24"
@@ -67,9 +66,7 @@
                                             stroke-linecap="round" stroke-linejoin="round" />
                                         <circle cx="9" cy="20" r="1.5" stroke="currentColor" stroke-width="2" />
                                         <circle cx="17" cy="20" r="1.5" stroke="currentColor" stroke-width="2" />
-                                    </svg>
-                                    <span>My Orders</span>
-                                </a>
+                                    </svg>My Orders</a>
                             </li>
                             <li>
                                 <a href="#" class="item"> <!-- Profile Icon -->
@@ -78,9 +75,7 @@
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path d="M12 2l3 7h7l-5.5 4.5 2 7-6-4-6 4 2-7L2 9h7l3-7z" stroke="currentColor"
                                             stroke-width="2" />
-                                    </svg>
-                                    <span>My Points</span>
-                                </a>
+                                    </svg>My Points</a>
                             </li>
                             <li>
                                 <a href="#" class="item"><!-- Profile Icon -->
@@ -88,9 +83,7 @@
                                         xmlns="http://www.w3.org/2000/svg">
                                         <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2" />
                                         <path d="M4 20c0-4 8-4 8-4s8 0 8 4" stroke="currentColor" stroke-width="2" />
-                                    </svg>
-                                    <span>Profile</span>
-                                </a>
+                                    </svg> Profile</a>
                             </li>
                             <li>
                                 <a href="#" class="item"> <!-- Address / Location Icon -->
@@ -99,9 +92,7 @@
                                         <path d="M12 2C8 2 5 5 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-4-3-7-7-7z"
                                             stroke="currentColor" stroke-width="2" />
                                         <circle cx="12" cy="9" r="2" stroke="currentColor" stroke-width="2" />
-                                    </svg>
-                                    <span>Address</span>
-                                </a>
+                                    </svg>Address</a>
                             </li>
                         </ul>
                     </div>
@@ -119,18 +110,99 @@
 
                     <!--================== When Items Found ===================-->
                     <div>
-                        <div class="order-head">
+
+                        <div class="" style="text-align: left; width:fit-content;">
+                            <!-- back to orders -->
+                            <a href="#" class="flex-center back-to-btn">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg> Back To Orders
+                            </a>
+                        </div>
+
+                        <!-- head -->
+                        <div class="order-head" style="margin-top: 12px;">
                             <div class="">
-                                <h1 class="page-title">My Orders</h1>
-                                <p class="page-sub-title">Here you can view all your past orders and their details.</p>
+                                <h1 class="page-title">Order Details</h1>
+                                <div class="page-sub-title">Order ID : <strong
+                                        style="font-weight: 600;">#344334</strong></div>
                             </div>
-                            <div class="sort-by">
-                                <label for="order-status" style="font-size: 16px;">Sort by:</label>
-                                <select id="order-status" name="order-status">
-                                    <option value="pending">Pending</option>
-                                    <option value="canceled">Canceled</option>
-                                    <option value="delivered">Delivered</option>
-                                </select>
+                            <div style="display: flex;flex-direction: column;align-items: end;">
+                                <div class="status delivered">Delivered</div>
+                                <!-- order date -->
+                                <div>
+                                    <div style="margin-top: 8px;font-size: 14px;opacity: .8;">Order Date: <span
+                                            style="font-weight: 500;">09 Feb 2026</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="details-cards my-mt-16">
+                            <div class="card">
+
+                                <!-- items price -->
+                                <div class="item">
+                                    <div class="key">Items Price:</div>
+                                    <div class="value">৳<span>1200</span></div>
+                                </div>
+                                <!-- items price -->
+                                <div class="item">
+                                    <div class="key">Shipping:</div>
+                                    <div class="value">৳<span>50</span></div>
+                                </div>
+                                <!-- items price -->
+                                <div class="item">
+                                    <div class="key">Tax:</div>
+                                    <div class="value">৳<span>00</span></div>
+                                </div>
+                                <!-- items price -->
+                                <div class="item total">
+                                    <div class="key">Total:</div>
+                                    <div class="value">৳<span>1250</span></div>
+                                </div>
+                                <!-- items price -->
+                                <div class="item point">
+                                    <div class="key">Point Earned:</div>
+                                    <div class="value"><span>120</span></div>
+                                </div>
+                            </div>
+
+                            <div class="card order">
+                                <div class="order-placed">
+                                    <div>Order Placed By, <div class="name">Md Tanvir
+                                            Ahmed</div>
+                                    </div>
+                                </div>
+
+                                <div style="display: flex;flex-direction: column;">
+                                    <div class="address item" style="margin-top: 16px;">
+                                        Address: <span>123 Main Street
+
+                                            Apartment 4B
+
+                                            Dhaka 1212, Bangladesh</span></div>
+                                    <div class="phone item">Phone: <span>091232323</span></div>
+                                    <div class="email item">Email: <span>tanvir@gamil.com</span></div>
+                                </div>
+                            </div>
+
+                            <div class="card payment-info">
+                                <h3 class="title">Payment Information</h3>
+
+                                <ul class="items">
+                                    <li class="item"> <span class="key">Paymanet Methods:</span> <span>Cash / Credit
+                                            Card</span></li>
+                                    <li class="item"> <span class="key">Card Ending:</span> <span>Cash / Credit
+                                            Card</span></li>
+                                    <li class="item"> <span class="key">Payment Status:</span> <span>Paid
+                                        </span></li>
+                                    <li class="item"> <span class="key">Paid On:</span> <span>12 Jan 2026</span>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
 
@@ -178,10 +250,7 @@
                                             </td>
 
                                             <!-- view details button -->
-                                            <td>
-                                                <a href="./order_details.html" class="my-btn my-primary-btn">
-                                                    Details</a>
-                                            </td>
+                                            <td><button class="my-btn my-primary-btn"> Details</button></td>
                                         </tr>
                                         <!-- single item  -->
                                         <tr>
@@ -210,10 +279,7 @@
                                             </td>
 
                                             <!-- view details button -->
-                                            <td>
-                                                <a href="./order_details.html" class="my-btn my-primary-btn">
-                                                    Details</a>
-                                            </td>
+                                            <td><button class="my-btn my-primary-btn"> Details</button></td>
                                         </tr>
                                         <!-- single item  -->
                                         <tr>
@@ -242,10 +308,7 @@
                                             </td>
 
                                             <!-- view details button -->
-                                            <td>
-                                                <a href="./order_details.html" class="my-btn my-primary-btn">
-                                                    Details</a>
-                                            </td>
+                                            <td><button class="my-btn my-primary-btn"> Details</button></td>
                                         </tr>
                                         <!-- single item  -->
                                         <tr>
@@ -274,10 +337,7 @@
                                             </td>
 
                                             <!-- view details button -->
-                                            <td>
-                                                <a href="./order_details.html" class="my-btn my-primary-btn">
-                                                    Details</a>
-                                            </td>
+                                            <td><button class="my-btn my-primary-btn"> Details</button></td>
                                         </tr>
                                         <!-- single item  -->
                                         <tr>
@@ -306,10 +366,7 @@
                                             </td>
 
                                             <!-- view details button -->
-                                            <td>
-                                                <a href="./order_details.html" class="my-btn my-primary-btn">
-                                                    Details</a>
-                                            </td>
+                                            <td><button class="my-btn my-primary-btn"> Details</button></td>
                                         </tr>
                                         <!-- single item  -->
                                         <tr>
@@ -338,10 +395,7 @@
                                             </td>
 
                                             <!-- view details button -->
-                                            <td>
-                                                <a href="./order_details.html" class="my-btn my-primary-btn">
-                                                    Details</a>
-                                            </td>
+                                            <td><button class="my-btn my-primary-btn"> Details</button></td>
                                         </tr>
                                         <!-- single item  -->
                                         <tr>
@@ -370,10 +424,7 @@
                                             </td>
 
                                             <!-- view details button -->
-                                            <td>
-                                                <a href="./order_details.html" class="my-btn my-primary-btn">
-                                                    Details</a>
-                                            </td>
+                                            <td><button class="my-btn my-primary-btn"> Details</button></td>
                                         </tr>
                                         <!-- single item  -->
                                         <tr>
@@ -402,43 +453,7 @@
                                             </td>
 
                                             <!-- view details button -->
-                                            <td>
-                                                <a href="./order_details.html" class="my-btn my-primary-btn">
-                                                    Details</a>
-                                            </td>
-                                        </tr>
-
-                                        <!-- single item  -->
-                                        <tr>
-                                            <td>#12345</td>
-                                            <td>2024-06-15</td>
-                                            <td>
-                                                <div>$<span>2000</span></div>
-                                            </td>
-                                            <td>00</td>
-                                            <td><span class="status pending">Pending</span></td>
-
-                                            <!-- view invoice button -->
-                                            <td>
-                                                <button class="my-btn view-invoice-btn" title="view invoice">
-                                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg">
-                                                        <!-- Eye outline -->
-                                                        <path d="M1 12C1 12 5 4 12 4s11 8 11 8-4 8-11 8S1 12 1 12Z"
-                                                            stroke="currentColor" stroke-width="2"
-                                                            stroke-linecap="round" stroke-linejoin="round" />
-                                                        <!-- Pupil -->
-                                                        <circle cx="12" cy="12" r="3" stroke="currentColor"
-                                                            stroke-width="2" />
-                                                    </svg>
-                                                </button>
-                                            </td>
-
-                                            <!-- view details button -->
-                                            <td>
-                                                <a href="./order_details.html" class="my-btn my-primary-btn">
-                                                    Details</a>
-                                            </td>
+                                            <td><button class="my-btn my-primary-btn"> Details</button></td>
                                         </tr>
                                         <!-- single item  -->
                                         <tr>
@@ -467,10 +482,7 @@
                                             </td>
 
                                             <!-- view details button -->
-                                            <td>
-                                                <a href="./order_details.html" class="my-btn my-primary-btn">
-                                                    Details</a>
-                                            </td>
+                                            <td><button class="my-btn my-primary-btn"> Details</button></td>
                                         </tr>
 
                                     </tbody>
@@ -518,15 +530,6 @@
                         </div>
                     </div>
 
-
-
-
-                    <!--================== When Item Empty ===================-->
-                    <div class="empty">
-                        <h3 class="page-title">No Orders Found</h3>
-                        <img class="my-mt-12" src="/static/src/images/not-found.png" alt="Not Found image"
-                            loading="lazy">
-                    </div>
 
                 </div>
             </div>

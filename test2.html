@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Order Details | Nutrition Portal</title>
+        <link rel="stylesheet" href="/static/src/css/main.css">
+        <link rel="stylesheet" href="/static/src/css/portal.css">
+
+        <style>
+            /* Order Details Page Styles */
+            .back-to-orders {
+                padding-top: 20px;
+            }
+
+            .back-btn {
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                color: var(--text-color);
+                text-decoration: none;
+                font-weight: 500;
+                padding: 8px 16px;
+                border-radius: 6px;
+                transition: all 0.3s ease;
+            }
+
+            .back-btn:hover {
+                background-color: var(--bg-light);
+                color: var(--primary-color);
+            }
+
+            .order-details-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+
+            .order-status-badge {
+                text-align: right;
+            }
+
+            .order-status-badge .order-date {
+                color: var(--text-light);
+                font-size: 14px;
+                margin-top: 4px;
+            }
+
+            /* Order Info Cards */
+            .order-info-cards {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 20px;
+            }
+
+            .order-card {
+                background: white;
+                border-radius: 10px;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                overflow: hidden;
+            }
+
+            .card-header {
+                background-color: var(--primary-color);
+                color: white;
+                padding: 16px 20px;
+            }
+
+            .card-header h3 {
+                margin: 0;
+                font-size: 18px;
+                font-weight: 600;
+            }
+
+            .card-body {
+                padding: 20px;
+            }
+
+            .order-summary-item {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 12px;
+                padding-bottom: 12px;
+                border-bottom: 1px solid var(--border-color);
+            }
+
+            .order-summary-item.total {
+                border-bottom: 2px solid var(--border-color);
+                font-weight: 600;
+                font-size: 18px;
+                margin-top: 16px;
+            }
+
+            .order-summary-item.points-earned {
+                border-bottom: none;
+                margin-bottom: 0;
+                padding-bottom: 0;
+            }
+
+            .points-value {
+                color: var(--primary-color);
+                font-weight: 600;
+            }
+
+            .shipping-info p,
+            .payment-info p {
+                margin: 8px 0;
+                color: var(--text-color);
+            }
+
+            .shipping-info p:first-child,
+            .payment-info p:first-child {
+                margin-top: 0;
+            }
+
+            /* Order Items Table */
+            .section-title {
+                font-size: 22px;
+                font-weight: 600;
+                color: var(--text-dark);
+            }
+
+            .product-info {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+            }
+
+            .product-image {
+                width: 60px;
+                height: 60px;
+                border-radius: 8px;
+                overflow: hidden;
+                background-color: var(--bg-light);
+            }
+
+            .product-image img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            .product-details h4 {
+                margin: 0 0 4px 0;
+                font-size: 16px;
+            }
+
+            .product-details p {
+                margin: 0;
+                color: var(--text-light);
+                font-size: 14px;
+            }
+
+            /* Order Timeline */
+            .timeline {
+                position: relative;
+                padding-left: 30px;
+            }
+
+            .timeline::before {
+                content: '';
+                position: absolute;
+                left: 10px;
+                top: 0;
+                bottom: 0;
+                width: 2px;
+                background-color: var(--border-color);
+            }
+
+            .timeline-item {
+                position: relative;
+                margin-bottom: 24px;
+            }
+
+            .timeline-item:last-child {
+                margin-bottom: 0;
+            }
+
+            .timeline-dot {
+                position: absolute;
+                left: -26px;
+                top: 0;
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background-color: var(--primary-color);
+                border: 3px solid white;
+                box-shadow: 0 0 0 2px var(--primary-color);
+            }
+
+            .timeline-item.completed .timeline-dot {
+                background-color: var(--success-color);
+                box-shadow: 0 0 0 2px var(--success-color);
+            }
+
+            .timeline-content h4 {
+                margin: 0 0 4px 0;
+                font-size: 16px;
+                font-weight: 600;
+            }
+
+            .timeline-content p {
+                margin: 0;
+                color: var(--text-light);
+                font-size: 14px;
+            }
+
+            .tracking-info,
+            .delivery-info {
+                color: var(--text-color) !important;
+                font-size: 13px !important;
+                margin-top: 2px !important;
+            }
+
+            /* Order Actions */
+            .order-actions {
+                display: flex;
+                gap: 12px;
+                flex-wrap: wrap;
+                padding-top: 20px;
+                border-top: 1px solid var(--border-color);
+            }
+
+            .order-actions .my-btn {
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+            }
+
+            /* Responsive Design */
+            @media (max-width: 768px) {
+                .order-details-header {
+                    flex-direction: column;
+                }
+
+                .order-status-badge {
+                    text-align: left;
+                }
+
+                .order-info-cards {
+                    grid-template-columns: 1fr;
+                }
+
+                .order-actions {
+                    flex-direction: column;
+                }
+
+                .order-actions .my-btn {
+                    width: 100%;
+                    justify-content: center;
+                }
+            }
+
+            @media (max-width: 480px) {
+                .product-info {
+                    flex-direction: column;
+                    align-items: flex-start;
+                    text-align: left;
+                }
+
+                .timeline {
+                    padding-left: 20px;
+                }
+
+                .timeline::before {
+                    left: 5px;
+                }
+
+                .timeline-dot {
+                    left: -20px;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <header class="c">
+            <div class="container">
+                <h2 style="color:#A8D613">Nutrition Portal</h2>
+            </div>
+        </header>
+
+        <main>
+            <section>
+                <div class="container">
+                    <!--=======================||  Portal Header Here  ||=======================-->
+                    <div class="portal-header">
+                        <div class="left">
+                            <div class="image-wrap">
+                                <img src="/static/src/images/avatar.jpg" alt="profile image" loading="lazy">
+                            </div>
+                            <div class="">
+                                <div class="greeting">Hello,</div>
+                                <div class="name">Tanvir Ahmed</div>
+                            </div>
+                        </div>
+                        <div class="right">
+                            <div class="my-points">My Points</div>
+                            <div class="points">1600</div>
+                        </div>
+                    </div>
+
+                    <!--============================|| Portal Menus Sub Header Here ||=============================-->
+                    <div class="portal-sub-header-wrap">
+                        <ul class="portal-sub-header">
+                            <li>
+                                <a href="portal.html" class="item">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="3" y="3" width="8" height="8" />
+                                        <rect x="13" y="3" width="8" height="8" />
+                                        <rect x="3" y="13" width="8" height="8" />
+                                        <rect x="13" y="13" width="8" height="8" />
+                                    </svg>
+                                    <span class="no-wrap">Overview</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="orders.html" class="item active">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M6 6H20L18 14H8L6 6Z" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                        <circle cx="9" cy="20" r="1.5" stroke="currentColor" stroke-width="2" />
+                                        <circle cx="17" cy="20" r="1.5" stroke="currentColor" stroke-width="2" />
+                                    </svg>
+                                    <span>My Orders</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="points.html" class="item">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 2l3 7h7l-5.5 4.5 2 7-6-4-6 4 2-7L2 9h7l3-7z" stroke="currentColor"
+                                            stroke-width="2" />
+                                    </svg>
+                                    <span>My Points</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="profile.html" class="item">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2" />
+                                        <path d="M4 20c0-4 8-4 8-4s8 0 8 4" stroke="currentColor" stroke-width="2" />
+                                    </svg>
+                                    <span>Profile</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="address.html" class="item">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 2C8 2 5 5 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-4-3-7-7-7z"
+                                            stroke="currentColor" stroke-width="2" />
+                                        <circle cx="12" cy="9" r="2" stroke="currentColor" stroke-width="2" />
+                                    </svg>
+                                    <span>Address</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!--============================|| Order Details Content Here ||============================-->
+            <div class="page-content">
+                <div class="container">
+                    <!-- Back to Orders Button -->
+                    <div class="back-to-orders my-mb-20">
+                        <a href="orders.html" class="back-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            Back to Orders
+                        </a>
+                    </div>
+
+                    <!-- Order Header -->
+                    <div class="order-details-header my-mb-24">
+                        <div class="left">
+                            <h1 class="page-title">Order Details</h1>
+                            <p class="page-sub-title">Order ID: <strong>#12345</strong></p>
+                        </div>
+                        <div class="right">
+                            <div class="order-status-badge">
+                                <span class="status delivered">Delivered</span>
+                                <p class="order-date">Order Date: 2024-06-15</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Order Info Cards -->
+                    <div class="order-info-cards my-mb-30">
+                        <div class="order-card">
+                            <div class="card-header">
+                                <h3>Order Summary</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="order-summary-item">
+                                    <span>Subtotal:</span>
+                                    <span>$1800.00</span>
+                                </div>
+                                <div class="order-summary-item">
+                                    <span>Shipping:</span>
+                                    <span>$50.00</span>
+                                </div>
+                                <div class="order-summary-item">
+                                    <span>Tax:</span>
+                                    <span>$150.00</span>
+                                </div>
+                                <div class="order-summary-item total">
+                                    <span>Total:</span>
+                                    <span>$2000.00</span>
+                                </div>
+                                <div class="order-summary-item points-earned">
+                                    <span>Points Earned:</span>
+                                    <span class="points-value">500</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="order-card">
+                            <div class="card-header">
+                                <h3>Shipping Information</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="shipping-info">
+                                    <p><strong>Tanvir Ahmed</strong></p>
+                                    <p>123 Main Street</p>
+                                    <p>Apartment 4B</p>
+                                    <p>Dhaka 1212, Bangladesh</p>
+                                    <p>Phone: +880 1234 567890</p>
+                                    <p>Email: tanvir@example.com</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="order-card">
+                            <div class="card-header">
+                                <h3>Payment Information</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="payment-info">
+                                    <p><strong>Payment Method:</strong> Credit Card</p>
+                                    <p><strong>Card Ending:</strong> **** 1234</p>
+                                    <p><strong>Payment Status:</strong> Paid</p>
+                                    <p><strong>Paid On:</strong> 2024-06-15</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Order Items Table -->
+                    <div class="order-items-table my-mb-30">
+                        <h2 class="section-title my-mb-16">Order Items</h2>
+                        <div class="table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Product</th>
+                                        <th>Price</th>
+                                        <th>Quantity</th>
+                                        <th>Total</th>
+                                        <th>Points</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="product-info">
+                                                <div class="product-image">
+                                                    <img src="/static/src/images/products/protein-powder.jpg"
+                                                        alt="Protein Powder" loading="lazy">
+                                                </div>
+                                                <div class="product-details">
+                                                    <h4>Whey Protein Powder</h4>
+                                                    <p>Vanilla Flavor, 5lbs</p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>$80.00</td>
+                                        <td>2</td>
+                                        <td>$160.00</td>
+                                        <td>40</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="product-info">
+                                                <div class="product-image">
+                                                    <img src="/static/src/images/products/vitamins.jpg"
+                                                        alt="Multivitamins" loading="lazy">
+                                                </div>
+                                                <div class="product-details">
+                                                    <h4>Multivitamin Complex</h4>
+                                                    <p>90 Capsules</p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>$45.00</td>
+                                        <td>3</td>
+                                        <td>$135.00</td>
+                                        <td>30</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="product-info">
+                                                <div class="product-image">
+                                                    <img src="/static/src/images/products/bcaa.jpg" alt="BCAA"
+                                                        loading="lazy">
+                                                </div>
+                                                <div class="product-details">
+                                                    <h4>BCAA Powder</h4>
+                                                    <p>Fruit Punch, 400g</p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>$60.00</td>
+                                        <td>1</td>
+                                        <td>$60.00</td>
+                                        <td>15</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="product-info">
+                                                <div class="product-image">
+                                                    <img src="/static/src/images/products/creatine.jpg" alt="Creatine"
+                                                        loading="lazy">
+                                                </div>
+                                                <div class="product-details">
+                                                    <h4>Creatine Monohydrate</h4>
+                                                    <p>500g, Unflavored</p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>$35.00</td>
+                                        <td>4</td>
+                                        <td>$140.00</td>
+                                        <td>35</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Order Timeline -->
+                    <div class="order-timeline my-mb-30">
+                        <h2 class="section-title my-mb-16">Order Timeline</h2>
+                        <div class="timeline">
+                            <div class="timeline-item completed">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <h4>Order Placed</h4>
+                                    <p>June 15, 2024 - 10:30 AM</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item completed">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <h4>Order Confirmed</h4>
+                                    <p>June 15, 2024 - 11:00 AM</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item completed">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <h4>Order Processed</h4>
+                                    <p>June 15, 2024 - 2:00 PM</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item completed">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <h4>Shipped</h4>
+                                    <p>June 16, 2024 - 9:00 AM</p>
+                                    <p class="tracking-info">Tracking #: TRK123456789</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item completed">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <h4>Delivered</h4>
+                                    <p>June 18, 2024 - 3:30 PM</p>
+                                    <p class="delivery-info">Delivered to: Reception</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="order-actions my-mt-30">
+                        <button class="my-btn my-secondary-btn">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 19H19V21H5V19H12ZM13 5H11V15H13V5Z" fill="currentColor" />
+                            </svg>
+                            Download Invoice
+                        </button>
+                        <button class="my-btn my-secondary-btn">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 20H19V18H5V20ZM19 9H15V3H9V9H5L12 16L19 9Z" fill="currentColor" />
+                            </svg>
+                            Track Package
+                        </button>
+                        <button class="my-btn my-primary-btn">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2l3 7h7l-5.5 4.5 2 7-6-4-6 4 2-7L2 9h7l3-7z" stroke="currentColor"
+                                    stroke-width="2" />
+                            </svg>
+                            Earn More Points
+                        </button>
+                        <button class="my-btn my-outline-btn">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M9 17H7V10H9V17ZM17 17H15V10H17V17ZM12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20Z"
+                                    fill="currentColor" />
+                            </svg>
+                            Report Issue
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer></footer>
+    </body>
+
+</html>
