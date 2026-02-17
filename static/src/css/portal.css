@@ -318,9 +318,10 @@
 .order-timeline {
     display: flex;
     gap: 48px;
-    border: 1px solid var(--my-border-1);
+    /* border: 1px solid var(--my-border-1); */
     border-radius: 12px;
-    padding: 12px;
+    padding: 16px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 20px;
 }
 
 .order-timeline .timeline-item {
@@ -344,7 +345,7 @@
     transform: translateX(-50%);
     height: 4px;
     width: 48px;
-    background-color: rgb(202, 202, 202);
+    background: linear-gradient(to right, rgb(202, 202, 202), rgba(202, 202, 202, 0.343));
 }
 
 .order-timeline .timeline-item:first-child::before {
@@ -388,7 +389,11 @@
     opacity: .6;
 }
 
-
+.order-table table {
+    border: none;
+    background-color: #ededed;
+    border-radius: 12px;
+}
 
 
 
