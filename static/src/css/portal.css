@@ -317,8 +317,10 @@
 /* order-timeline */
 .order-timeline {
     display: flex;
-    flex-direction: column;
     gap: 48px;
+    border: 1px solid var(--my-border-1);
+    border-radius: 12px;
+    padding: 12px;
 }
 
 .order-timeline .timeline-item {
@@ -330,24 +332,36 @@
     width: fit-content;
     border-radius: 12px;
     opacity: .5;
+    text-align: center;
     position: relative;
 }
 
 .order-timeline .timeline-item.active::after {
     content: '';
     position: absolute;
-    bottom: -48px;
-    left: 50%;
+    right: -72px;
+    top: 50%;
     transform: translateX(-50%);
-    height: 48px;
-    width: 4px;
+    height: 4px;
+    width: 48px;
     background-color: rgb(202, 202, 202);
 }
 
-
-
 .order-timeline .timeline-item:first-child::before {
     display: none;
+}
+
+.order-timeline .timeline-item.active::before {
+    display: block;
+    content: '';
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    background-color: var(--my-primary-hover);
+    z-index: 2;
 }
 
 
