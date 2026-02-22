@@ -311,7 +311,19 @@
 }
 
 
-
+.total-orders {
+    font-size: 14px;
+    background-color: #b5dc3651;
+    width: 32px;
+    height: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: gray;
+    font-weight: 500;
+    padding: 2px;
+}
 
 
 /* order-timeline */
