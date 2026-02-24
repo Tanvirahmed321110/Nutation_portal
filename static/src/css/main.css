@@ -76,8 +76,9 @@ footer {
 .back-to-btn {
     font-weight: 500;
     transition: .2s ease;
-    /* text-decoration: underline; */
     gap: 4px;
+    margin-top: 12px;
+    opacity: .65;
 }
 
 .back-to-btn:hover {
@@ -636,6 +637,15 @@ a {
     .portal-header .left .image-wrap {
         width: 60px;
         height: 60px;
+    }
+
+
+    .back-to-btn {
+        font-weight: 500;
+        transition: .2s ease;
+        gap: 4px;
+        margin-top: 24px;
+        opacity: .65;
     }
 }
 

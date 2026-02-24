@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Profile</title>
+        <link rel="stylesheet" href="/static/src/css/main.css">
+        <link rel="stylesheet" href="/static/src/css/portal.css">
+    </head>
+
+    <body>
+        <header class="c">
+            <div class="container">
+                <h2 style="color:#A8D613">Nutrition Portal</h2>
+            </div>
+        </header>
+        <main>
+
+
+            <section>
+
+                <div class="container">
+                    <!--=======================||  Portal Header Here  ||=======================-->
+                    <div class="portal-header">
+                        <div class="left">
+                            <div class="image-wrap">
+                                <!-- User Image  -->
+                                <img src="/static/src/images/avatar.jpg" alt="profile image" loading="lazy">
+                            </div>
+
+                            <div class="">
+                                <div class="greeting">Hello,</div>
+                                <!-- User Name Here vai -->
+                                <div class="name">Tanvir Ahmed</div>
+                            </div>
+                        </div>
+
+                        <!-- Right -->
+                        <div class="right">
+                            <div class="my-points">My Points</div>
+                            <!-- Total Points Here Boss -->
+                            <div class="points">1600</div>
+                        </div>
+                    </div>
+
+
+
+                    <!--============================|| Portal Menus Sub Header Here ||=============================-->
+                    <div class="portal-sub-header-wrap">
+                        <ul class="portal-sub-header">
+                            <li>
+                                <a href="/templates/overview.html" class="item "><svg width="20" height="20"
+                                        viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="3" y="3" width="8" height="8" />
+                                        <rect x="13" y="3" width="8" height="8" />
+                                        <rect x="3" y="13" width="8" height="8" />
+                                        <rect x="13" y="13" width="8" height="8" />
+                                    </svg>
+                                    Overview</a>
+                            </li>
+                            <li>
+                                <a href="/templates/orders.html" class="item "><svg width="20" height="20"
+                                        viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M6 6H20L18 14H8L6 6Z" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                        <circle cx="9" cy="20" r="1.5" stroke="currentColor" stroke-width="2" />
+                                        <circle cx="17" cy="20" r="1.5" stroke="currentColor" stroke-width="2" />
+                                    </svg>My Orders</a>
+                            </li>
+                            <li>
+                                <a href="/templates/points.html" class="item "> <!-- Profile Icon -->
+                                    <!-- Star / Points Icon -->
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 2l3 7h7l-5.5 4.5 2 7-6-4-6 4 2-7L2 9h7l3-7z" stroke="currentColor"
+                                            stroke-width="2" />
+                                    </svg>My Points</a>
+                            </li>
+                            <li>
+                                <a href="#" class="item active"><!-- Profile Icon -->
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2" />
+                                        <path d="M4 20c0-4 8-4 8-4s8 0 8 4" stroke="currentColor" stroke-width="2" />
+                                    </svg> Profile</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </section>
+
+
+
+
+            <!--============================|| Page Content Here ||============================-->
+            <div class="page-content">
+                <div class="container">
+
+                    <div style="display: flex;align-items: center;justify-content: center; flex-direction: column;">
+
+                        <!-- error or sucess message here -->
+                        <!-- <div class="validation-sms alert">
+                            Validation Message Error / Sucessfully Submited
+                        </div> -->
+
+                        <div class="profile-wrap">
+                            <h3 style="margin-bottom:16px;">Profile Information</h3>
+                            <form action="#" class="left">
+
+                                <!-- for name -->
+                                <div class="my-input-control">
+                                    <label for="">Name</label>
+                                    <input type="text" placeholder="Name">
+                                </div>
+                                <!-- for Phone -->
+                                <div class="my-input-control">
+                                    <label for="">Phone</label>
+                                    <input type="text" placeholder="Phone">
+                                </div>
+                                <!-- for email -->
+                                <div class="my-input-control">
+                                    <label for="">Email</label>
+                                    <input type="text" placeholder="Name">
+                                </div>
+                                <!-- Address -->
+                                <div class="my-input-control">
+                                    <label for="">Address</label>
+                                    <textarea name="" id=""></textarea>
+                                </div>
+
+                                <button class="my-primary-btn my-btn"
+                                    style="width: 100%; padding: 10px 16px;">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+
+
+
+        <footer></footer>
+    </body>
+
+</html>
